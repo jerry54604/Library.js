@@ -1,6 +1,6 @@
 # Sort.js
 
-A JavaScript function to provide more flexible for Array.prototype.sort()
+A JavaScript function to provide more flexible sorting for Array.prototype.sort()
 
 ## Usage
 **Sample Data**
