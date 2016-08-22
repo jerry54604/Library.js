@@ -36,13 +36,13 @@ var data = [
 **Example 1:**
 Sort by single field
 ```js
-  data.sort(sort_by("id"));
+data.sort(sort_by("id"));
 ```
 
 **Example 2:**
 Sort by multiple field and nested json
 ```js
-  data.sort(sort_by("name.first", "name.last"));
+data.sort(sort_by("name.first", "name.last"));
 ```
 
 **Example 3:**
