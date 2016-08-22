@@ -7,7 +7,7 @@ A JavaScript function to provide more flexible for Array.prototype.sort()
 ```js
 var data = [
   {
-    id: 1,
+    id: 3,
     name: {
       first: "Bul",
       last: "Basaur"
@@ -23,7 +23,7 @@ var data = [
     gender: "F"
   },
   {
-    id: 3,
+    id: 1,
     name: {
       first: "Squir",
       last: "Tle"
