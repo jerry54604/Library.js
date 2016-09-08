@@ -90,7 +90,7 @@ var DateTime = (function() {
         result = pad(date.getMinutes());
       } else if (match === "s") {
         result = date.getSeconds();
-       else if (match === "ss") {
+      } else if (match === "ss") {
         result = pad(date.getSeconds());
       } else if (match === "f") {
         result = math.floor(date.getMilliseconds() / 100);
