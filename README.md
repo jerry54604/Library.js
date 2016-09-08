@@ -56,3 +56,22 @@ Sort by last name ignore case (custom primer)
 ```js
 data.sort(sort_by({ name: "name.last", primer: function(a) { return a.toUpperCase() } }));
 ```
+
+# DateTime.js
+
+A JavaScript class to format Date object
+
+## Usage
+
+Custom Date Time format string
+```js
+// Will return something like this 8-Sep-2016 10:1:49 767 AM +8
+// Results might be differ based on your timezone and localization
+console.log(DateTime.formatDate(new Date(), "dd-MMM-yyyy hh:mm:ss fff tt z"));
+```
+
+Get time elapsed
+```js
+// This example will return you 12 months
+console.log(DateTime.timeSince(new Date("9/8/2015")));
+```
