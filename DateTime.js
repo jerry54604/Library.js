@@ -37,13 +37,6 @@ var DateTime = (function() {
     }
   }
 	
-  var pad = function(str, len, ch) {
-    while (str.length < len) {
-      str = ch + str;
-    }
-    return str;
-  }
-	
   var formatDate = function(date, format) {
     var calendar = calendars.standard,
       days = calendar.days,
@@ -59,7 +52,7 @@ var DateTime = (function() {
       if (match === "d") {
         result = date.getDate();
       } else if (match === "dd") {
-        result = pad(date.getDate());
+        result = date.getDate();
       } else if (match === "ddd") {
         result = days.namesAbbr[date.getDay()];
       } else if (match === "dddd") {
@@ -67,58 +60,58 @@ var DateTime = (function() {
       } else if (match === "M") {
         result = date.getMonth() + 1;
       } else if (match === "MM") {
-        result = pad(date.getMonth() + 1);
+        result = date.getMonth() + 1;
       } else if (match === "MMM") {
         result = months.namesAbbr[date.getMonth()];
       } else if (match === "MMMM") {
         result = months.names[date.getMonth()];
       } else if (match === "yy") {
-        result = pad(date.getFullYear() % 100);
+        result = date.getFullYear() % 100;
       } else if (match === "yyyy") {
-        result = pad(date.getFullYear(), 4);
+        result = date.getFullYear();
       } else if (match === "h" ) {
         result = date.getHours() % 12 || 12;
       } else if (match === "hh") {
-        result = pad(date.getHours() % 12 || 12);
+        result = date.getHours() % 12 || 12;
       } else if (match === "H") {
         result = date.getHours();
       } else if (match === "HH") {
-        result = pad(date.getHours());
+        result = date.getHours();
       } else if (match === "m") {
         result = date.getMinutes();
       } else if (match === "mm") {
-        result = pad(date.getMinutes());
+        result = date.getMinutes();
       } else if (match === "s") {
         result = date.getSeconds();
       } else if (match === "ss") {
-        result = pad(date.getSeconds());
+        result = date.getSeconds();
       } else if (match === "f") {
-        result = math.floor(date.getMilliseconds() / 100);
+        result = Math.floor(date.getMilliseconds() / 100);
       } else if (match === "ff") {
         result = date.getMilliseconds();
         if (result > 99) {
-          result = math.floor(result / 10);
+          result = Math.floor(result / 10);
         }
-        result = pad(result);
+        result = result;
       } else if (match === "fff") {
-        result = pad(date.getMilliseconds(), 3);
+        result = date.getMilliseconds();
       } else if (match === "tt") {
         result = date.getHours() < 12 ? calendar.AM[0] : calendar.PM[0];
       } else if (match === "zzz") {
         minutes = date.getTimezoneOffset();
         sign = minutes < 0;
 
-        result = math.abs(minutes / 60).toString().split(".")[0];
-        minutes = math.abs(minutes) - (result * 60);
+        result = Math.abs(minutes / 60).toString().split(".")[0];
+        minutes = Math.abs(minutes) - (result * 60);
 
-        result = (sign ? "+" : "-") + pad(result);
-        result += ":" + pad(minutes);
+        result = (sign ? "+" : "-") + result;
+        result += ":" + minutes;
       } else if (match === "zz" || match === "z") {
         result = date.getTimezoneOffset() / 60;
         sign = result < 0;
 
-        result = math.abs(result).toString().split(".")[0];
-        result = (sign ? "+" : "-") + (match === "zz" ? pad(result) : result);
+        result = Math.abs(result).toString().split(".")[0];
+        result = (sign ? "+" : "-") + (match === "zz" ? result : result);
       }
 
       return result !== undefined ? result : match.slice(1, match.length - 1);
@@ -159,6 +152,6 @@ var DateTime = (function() {
 })();
 
 /*
-console.log(DateTime.formatDate(new Date(), "dd-MMM-yyyy"));
+console.log(DateTime.formatDate(new Date(), "dd-MMM-yyyy HH:mm:ss fff z"));
 console.log(DateTime.timeSince(new Date("9/8/2015")));
 */
