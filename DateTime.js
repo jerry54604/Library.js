@@ -152,6 +152,6 @@ var DateTime = (function() {
 })();
 
 /*
-console.log(DateTime.formatDate(new Date(), "dd-MMM-yyyy HH:mm:ss fff z"));
+console.log(DateTime.formatDate(new Date(), "dd-MMM-yyyy HH:mm:ss tt fff z"));
 console.log(DateTime.timeSince(new Date("9/8/2015")));
 */
